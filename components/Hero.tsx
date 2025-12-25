@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { SparklesCore } from "./ui/sparkles";
 import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
 import { User, Mail } from "lucide-react";
+import { ThreeDCardDemo } from "./test";
 
 export default function Hero() {
   return (
@@ -98,7 +99,7 @@ export default function Hero() {
 
         {/* Right Column: Profile Card */}
         <div className='flex justify-center lg:justify-end'>
-          <CardContainer className='inter-var'>
+          {/* <CardContainer className='inter-var'>
             <CardBody className='bg-zinc-900/50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-purple-500/[0.1] border-zinc-800 w-auto sm:w-[22rem] h-auto rounded-3xl p-6 border backdrop-blur-sm'>
               <div className='text-center mb-6'>
                 <CardItem
@@ -116,16 +117,6 @@ export default function Hero() {
                 </CardItem>
               </div>
 
-              <CardItem translateZ='100' className='w-full mb-6'>
-                <div className='h-64 w-full bg-gradient-to-b from-zinc-800 to-black rounded-2xl overflow-hidden relative group-hover/card:shadow-xl border border-zinc-700'>
-                  {/* Placeholder Image */}
-                  <div className='absolute inset-0 flex items-center justify-center bg-zinc-800'>
-                    <User className='w-24 h-24 text-zinc-600' />
-                  </div>
-                  {/* Overlay Gradient */}
-                  <div className='absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent' />
-                </div>
-              </CardItem>
 
               <div className='flex justify-between items-center bg-black/40 rounded-2xl p-3 border border-zinc-800'>
                 <div className='flex items-center gap-3'>
@@ -153,6 +144,8 @@ export default function Hero() {
               </div>
             </CardBody>
           </CardContainer>
+        */}
+          <ThreeDCardDemo />
         </div>
       </div>
     </section>

@@ -3,13 +3,13 @@
 import { EncryptedText } from "./ui/encrypted-text";
 import { HoverBorderGradient } from "./ui/hover-border-gradient";
 import { motion } from "framer-motion";
-import { Snowfall } from "react-snowfall";
+// import { Snowfall } from "react-snowfall";
 
 export default function Hero() {
   return (
     <section className='relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-slate-950 to-black'>
       <div className='absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]' />
-      <Snowfall />
+      {/* <Snowfall /> */}
       {/* Subtle gradient orbs */}
       <motion.div
         className='absolute top-40 -left-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl'

@@ -63,21 +63,21 @@ export default function Contact() {
         >
           <HoverBorderGradient
             as='a'
-            href='mailto:your.email@example.com'
+            href='mailto:master007mix@gmail.com'
             className='px-8 py-3 text-white font-medium'
           >
             Send Email
           </HoverBorderGradient>
           <HoverBorderGradient
             as='a'
-            href='https://github.com/yourusername'
+            href='https://github.com/Arick0w0'
             target='_blank'
             rel='noopener noreferrer'
             className='px-8 py-3 text-white font-medium'
           >
             GitHub
           </HoverBorderGradient>
-          <HoverBorderGradient
+          {/* <HoverBorderGradient
             as='a'
             href='https://linkedin.com/in/yourusername'
             target='_blank'
@@ -85,7 +85,7 @@ export default function Contact() {
             className='px-8 py-3 text-white font-medium'
           >
             LinkedIn
-          </HoverBorderGradient>
+          </HoverBorderGradient> */}
         </motion.div>
         <motion.div
           initial={{ opacity: 0 }}

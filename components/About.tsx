@@ -74,11 +74,11 @@ export default function About() {
               className='grid grid-cols-2 gap-8 mt-12'
             >
               <div>
-                <h3 className='text-4xl font-bold text-white mb-2'>20+</h3>
+                <h3 className='text-4xl font-bold text-white mb-2'>7+</h3>
                 <p className='text-gray-500'>Projects Finished</p>
               </div>
               <div>
-                <h3 className='text-4xl font-bold text-white mb-2'>3+</h3>
+                <h3 className='text-4xl font-bold text-white mb-2'>1+</h3>
                 <p className='text-gray-500'>Years of Experience</p>
               </div>
               <div className='col-span-2 text-sm text-gray-600 mt-4 italic'>

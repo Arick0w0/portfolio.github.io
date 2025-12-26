@@ -13,7 +13,7 @@ export function ThreeDCardDemo() {
       <Icon className='absolute h-6 w-6 -bottom-3 -right-3 text-white' />
       <div className='relative w-full h-48 rounded-2xl overflow-hidden mb-4'>
         <Image
-          src='/images/image.jpg'
+          src={`${process.env.NODE_ENV === 'production' ? '/portfolio' : ''}/images/image.jpg`}
           alt='Profile'
           fill
           className='object-cover'
@@ -22,7 +22,7 @@ export function ThreeDCardDemo() {
 
       <EvervaultCard>
         <Image
-          src='/images/image.jpg'
+          src={`${process.env.NODE_ENV === 'production' ? '/portfolio' : ''}/images/image.jpg`}
           alt='Profile'
           fill
           className='object-cover rounded-full'

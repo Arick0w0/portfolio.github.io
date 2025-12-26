@@ -116,8 +116,9 @@
 //     linearDamping: 4
 //   };
 
-//   const { nodes, materials } = useGLTF('/lailaolab-tag.glb') as any;
-//   const texture = useTexture('/lailaolab-clamp.png');
+//   const basePath = process.env.NODE_ENV === 'production' ? '/portfolio' : '';
+//   const { nodes, materials } = useGLTF(`${basePath}/lailaolab-tag.glb`) as any;
+//   const texture = useTexture(`${basePath}/lailaolab-clamp.png`);
 //   const [curve] = useState(
 //     () =>
 //       new THREE.CatmullRomCurve3([new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3()])

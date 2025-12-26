@@ -24,9 +24,10 @@ import { useControls } from "leva";
 extend({ MeshLineGeometry, MeshLineMaterial });
 
 // Preload models and textures
-useGLTF.preload("/lailaolab-tag.glb", false, false);
+const basePath = process.env.NODE_ENV === 'production' ? '/portfolio' : '';
+useGLTF.preload(`${basePath}/lailaolab-tag.glb`, false, false);
 
-useTexture.preload("/lailaolab-clamp.png");
+useTexture.preload(`${basePath}/lailaolab-clamp.png`);
 
 export default function Tag3d() {
   return (
@@ -94,15 +95,15 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
   };
 
   // Load models and textures
-  const { nodes, materials } = useGLTF("/lailaolab-tag.glb");
-
+	const basePath = process.env.NODE_ENV === 'production' ? '/portfolio' : '';
+	const { nodes, materials } = useGLTF(`${basePath}/lailaolab-tag.glb`);
   for (const node of Object.values(nodes)) {
     if (node instanceof THREE.Mesh) {
       console.log(node.geometry, node.material);
     }
   }
 
-  const texture = useTexture("/lailaolab-clamp.png");
+  const texture = useTexture(`${basePath}/lailaolab-clamp.png`);
 
   const { width, height } = useThree((state) => state.size);
   const [curve] = useState(

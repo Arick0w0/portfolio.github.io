@@ -118,7 +118,7 @@ export default function Projects() {
                   <Image
                     src={`${
                       process.env.NODE_ENV === "production"
-                        ? "/portfolio_1"
+                        ? "/portfolio"
                         : ""
                     }/images/${project.image}`}
                     alt={project.title}

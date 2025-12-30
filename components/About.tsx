@@ -34,9 +34,10 @@ export default function About() {
           </p>
         </motion.div>
 
-        <div className='grid grid-cols-1 md:grid-cols-6 gap-6 auto-rows-[minmax(180px,auto)]'>
-          {/* 1. Main Bio - Large Card */}
-          <div className='md:col-span-4 md:row-span-2'>
+        <div className=' grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-[minmax(180px,auto)]'>
+          {/* lift */}
+          <div className='order-2 md:order-1 grid grid-cols-1 md:grid-cols-4 md:grid-rows-6 gap-6'>
+             <div className='md:col-span-4 md:row-span-2'>
             <BackgroundGradient className='rounded-[22px] h-full p-8 bg-zinc-900 overflow-hidden'>
               <h3 className='text-2xl font-bold text-white mb-4'>Who am I?</h3>
               <div className='space-y-4 text-gray-300 leading-relaxed'>
@@ -66,20 +67,11 @@ export default function About() {
             </BackgroundGradient>
           </div>
 
-          {/* 2. 3D Tag - Tall Card */}
-          <div className='md:col-span-2 md:row-span-3 relative min-h-[500px] md:min-h-0 rounded-3xl bg-zinc-900/50 border border-zinc-800 overflow-hidden'>
-            <div className='absolute inset-0 w-full h-full'>
-              <Tag3d />
-            </div>
-            <div className='absolute bottom-4 left-0 right-0 text-center pointer-events-none'>
-              <p className='text-xs text-gray-500 uppercase tracking-widest'>
-                Interactive 3D Card
-              </p>
-            </div>
-          </div>
+          
 
           {/* 3. Stats - Small Cards */}
-          <motion.div
+          <div className='flex md:col-span-4 py-6 justify-between gap-6 mt-6 md:mt-0 grid grid-cols-2 md:grid-cols-4'>
+            <motion.div
             whileHover={{ scale: 1.02 }}
             className='md:col-span-2 bg-zinc-900 rounded-3xl p-6 border border-zinc-800 flex flex-col justify-center items-center text-center group hover:border-purple-500/50 transition-colors'
           >
@@ -100,6 +92,7 @@ export default function About() {
             <h4 className='text-4xl font-bold text-white mb-1'>1+</h4>
             <p className='text-sm text-gray-400'>Years Experience</p>
           </motion.div>
+          </div>
 
           {/* 4. Tech Stack - Wide Card */}
           <div className='md:col-span-4 bg-zinc-900 rounded-3xl p-8 border border-zinc-800'>
@@ -124,9 +117,26 @@ export default function About() {
               ))}
             </div>
           </div>
+          </div>
+          {/* rigth */}
+          <div className='order-1 md:order-2'>
+            {/* 2. 3D Tag - Tall Card */}
+          <div className='md:col-span-2 md:row-span-3 relative lg:h-full min-h-[500px] md:min-h-0 rounded-3xl bg-zinc-900/50 border border-zinc-800 overflow-hidden'>
+            <div className='absolute inset-0 w-full h-full'>
+              <Tag3d />
+            </div>
+            <div className='absolute bottom-4 left-0 right-0 text-center pointer-events-none'>
+              <p className='text-xs text-gray-500 uppercase tracking-widest'>
+                Interactive 3D Card
+              </p>
+            </div>
+          </div>
+          </div>
+          {/* 1. Main Bio - Large Card */}
+         
 
           {/* 5. Quote - Full Width Bottom */}
-          <div className='md:col-span-6 bg-gradient-to-r from-indigo-900/50 to-purple-900/50 rounded-3xl p-8 border border-indigo-500/20 flex items-center justify-center text-center'>
+          <div className='order-3 md:col-span-6 bg-gradient-to-r from-indigo-900/50 to-purple-900/50 rounded-3xl p-8 border border-indigo-500/20 flex items-center justify-center text-center'>
             <div>
               <p className='text-xl md:text-2xl font-medium text-white italic mb-2'>
                 &quot;Working with heart, creating with mind.&quot;

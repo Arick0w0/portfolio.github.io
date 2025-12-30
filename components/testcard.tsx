@@ -32,7 +32,7 @@ useTexture.preload(`${basePath}/lailaolab-clamp.png`);
 export default function Tag3d() {
   return (
     <Canvas
-      camera={{ position: [0, 0, 12], fov: 25 }}
+      camera={{ position: [0, 0, 20], fov: 20 }}
       style={{ background: "transparent" }}
     >
       <ambientLight intensity={Math.PI} />

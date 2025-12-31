@@ -2,6 +2,8 @@
 
 A modern, responsive portfolio website built with Next.js, TypeScript, and Aceternity UI components.
 
+> Deployed to GitHub Pages
+
 ## Features
 
 - 🎨 Beautiful UI with Aceternity UI components

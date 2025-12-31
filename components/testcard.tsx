@@ -33,7 +33,7 @@ export default function Tag3d() {
   return (
     <Canvas
       camera={{ position: [0, 0, 12], fov: 25 }}
-      style={{ background: "transparent" }}
+      style={{ background: "transparent", height: "100%", width: "100%" }}
     >
       <ambientLight intensity={Math.PI} />
       <Physics interpolate gravity={[0, -40, 0]} timeStep={1 / 60}>

@@ -67,14 +67,9 @@ export default function About() {
           </div>
 
           {/* 2. 3D Tag - Tall Card */}
-          <div className='md:col-span-2 md:row-span-3 relative min-h-[500px] md:min-h-0 rounded-3xl bg-zinc-900/50 border border-zinc-800 overflow-hidden'>
+          <div className='md:col-span-2 md:row-span-3 relative min-h-[500px] md:h-full rounded-3xl overflow-hidden'>
             <div className='absolute inset-0 w-full h-full'>
               <Tag3d />
-            </div>
-            <div className='absolute bottom-4 left-0 right-0 text-center pointer-events-none'>
-              <p className='text-xs text-gray-500 uppercase tracking-widest'>
-                Interactive 3D Card
-              </p>
             </div>
           </div>
 
@@ -126,14 +121,14 @@ export default function About() {
           </div>
 
           {/* 5. Quote - Full Width Bottom */}
-          <div className='md:col-span-6 bg-gradient-to-r from-indigo-900/50 to-purple-900/50 rounded-3xl p-8 border border-indigo-500/20 flex items-center justify-center text-center'>
+          {/* <div className='md:col-span-6 bg-gradient-to-r from-indigo-900/50 to-purple-900/50 rounded-3xl p-8 border border-indigo-500/20 flex items-center justify-center text-center'>
             <div>
               <p className='text-xl md:text-2xl font-medium text-white italic mb-2'>
                 &quot;Working with heart, creating with mind.&quot;
               </p>
               <p className='text-indigo-300 text-sm'>- My Philosophy</p>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

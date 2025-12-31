@@ -84,9 +84,15 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className='flex flex-wrap gap-4 justify-center lg:justify-start'
           >
-            <button className='px-8 py-3 rounded-full bg-white text-black font-medium hover:bg-gray-200 transition-colors'>
-              Download CV
-            </button>
+            <a
+              href='https://drive.google.com/drive/folders/12-FgSc5yoFEecMaL_LYxQboKXiimgDM4?usp=sharing'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <button className='px-8 py-3 rounded-full bg-white text-black font-medium hover:bg-gray-200 transition-colors'>
+                Download CV
+              </button>
+            </a>
             <button className='px-8 py-3 rounded-full border border-zinc-700 text-white font-medium hover:bg-zinc-900 transition-colors'>
               Explore My Projects
             </button>

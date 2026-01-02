@@ -91,6 +91,30 @@ const projects = [
     image: "foodDiver.png",
     className: "md:col-span-1",
   },
+  {
+    title: "Express Driver App",
+    description:
+      "Logistics driver platform for parcel delivery and bus trip management",
+    highlights: [
+      "Developed parcel tracking system handling 1000+ daily deliveries",
+      "Built QR code scanner for instant ticket validation and check-in",
+    ],
+    technologies: ["Flutter", "GetX", "WebSocket", "Firebase", "QR Scanner"],
+    image: "expressDiver.png",
+    className: "md:col-span-1",
+  },
+  {
+    title: "Express Customer App",
+    description:
+      "User-friendly logistics app for tracking parcels and booking bus tickets",
+    highlights: [
+      "Built real-time parcel tracking with delivery status notifications",
+      "Integrated payment gateway for seamless ticket booking and payments",
+    ],
+    technologies: ["Flutter", "QR Scanner", "Payment Gateway", "FCM"],
+    image: "customerExpress.png",
+    className: "md:col-span-1",
+  },
 ];
 
 export default function Projects() {

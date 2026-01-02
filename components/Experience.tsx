@@ -5,30 +5,6 @@ import { Timeline } from "./ui/timeline";
 export default function Experience() {
   const data = [
     {
-      period: "2022 – 2023",
-      title: "Internship at Sokxay Group",
-      content: (
-        <ul className='list-disc list-inside space-y-2'>
-          <li>Developed and maintained product sales system</li>
-          <li>Developed and tested a barcode generator for production</li>
-          <li>
-            Developed and installed a meeting room reservation system and hosted
-            on IIS
-          </li>
-        </ul>
-      ),
-    },
-    {
-      period: "2023 – 2024",
-      title: "Final Project of Bachelor Degree",
-      content: (
-        <ul className='list-disc list-inside space-y-2'>
-          <li>Designed and developed mobile application</li>
-          <li>Developed mobile application user interface using Flutter</li>
-        </ul>
-      ),
-    },
-    {
       period: "2024 – Now",
       title: "Mobile App Developer – LAILAOLAP",
       content: (
@@ -99,6 +75,31 @@ export default function Experience() {
             </ul>
           </div>
         </div>
+      ),
+    },
+
+    {
+      period: "2023 – 2024",
+      title: "Final Project of Bachelor Degree",
+      content: (
+        <ul className='list-disc list-inside space-y-2'>
+          <li>Designed and developed mobile application</li>
+          <li>Developed mobile application user interface using Flutter</li>
+        </ul>
+      ),
+    },
+    {
+      period: "2022 – 2023",
+      title: "Internship at Sokxay Group",
+      content: (
+        <ul className='list-disc list-inside space-y-2'>
+          <li>Developed and maintained product sales system</li>
+          <li>Developed and tested a barcode generator for production</li>
+          <li>
+            Developed and installed a meeting room reservation system and hosted
+            on IIS
+          </li>
+        </ul>
       ),
     },
   ];

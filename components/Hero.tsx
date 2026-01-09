@@ -114,11 +114,11 @@ export default function Hero() {
           >
             <button
               onClick={() => setIsDialogOpen(true)}
-              className='px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base rounded-full bg-white text-black font-medium hover:bg-gray-200 transition-colors w-full sm:w-auto'
+              className='order-2 lg:order-1 px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base rounded-full bg-white text-black font-medium hover:bg-gray-200 transition-colors w-full sm:w-auto'
             >
               Download CV
             </button>
-            <button className='px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base rounded-full border border-zinc-700 text-white font-medium hover:bg-zinc-900 transition-colors w-full sm:w-auto'>
+            <button className='order-1 lg:order-2 px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base rounded-full border border-zinc-700 text-white font-medium hover:bg-zinc-900 transition-colors w-full sm:w-auto'>
               Explore My Projects
             </button>
           </motion.div>

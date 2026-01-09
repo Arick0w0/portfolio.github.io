@@ -3,8 +3,36 @@
 import { EncryptedText } from "./ui/encrypted-text";
 import { motion } from "framer-motion";
 import { ThreeDCardDemo } from "./test";
+import { useState } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogFooter,
+} from "./ui/dialog";
+import Image from "next/image";
 
 export default function Hero() {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
+  const handleDownloadPNG = () => {
+    const link = document.createElement("a");
+    link.href = "/cv/CV.png";
+    link.download = "Nanthavy.png";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const handleDownloadPDF = () => {
+      const link = document.createElement("a");
+    link.href = "/cv/CV.pdf";
+    link.download = "Nanthavy.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
   return (
     <section className='relative min-h-screen flex items-center justify-center overflow-hidden bg-black py-20 lg:py-0'>
       <div className='w-full absolute inset-0 h-screen'></div>
@@ -84,15 +112,12 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className='flex flex-wrap gap-4 justify-center lg:justify-start'
           >
-            <a
-              href='https://drive.google.com/drive/folders/12-FgSc5yoFEecMaL_LYxQboKXiimgDM4?usp=sharing'
-              target='_blank'
-              rel='noopener noreferrer'
+            <button
+              onClick={() => setIsDialogOpen(true)}
+              className='px-8 py-3 rounded-full bg-white text-black font-medium hover:bg-gray-200 transition-colors'
             >
-              <button className='px-8 py-3 rounded-full bg-white text-black font-medium hover:bg-gray-200 transition-colors'>
-                Download CV
-              </button>
-            </a>
+              Download CV
+            </button>
             <button className='px-8 py-3 rounded-full border border-zinc-700 text-white font-medium hover:bg-zinc-900 transition-colors'>
               Explore My Projects
             </button>
@@ -151,6 +176,49 @@ export default function Hero() {
           <ThreeDCardDemo />
         </div>
       </div>
+
+      {/* CV Preview Dialog */}
+      <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+        <DialogContent className='max-w-xl bg-zinc-900 border-zinc-800'>
+          <DialogHeader>
+            <DialogTitle className='text-white text-2xl'>
+              Curriculum Vitae
+            </DialogTitle>
+          </DialogHeader>
+
+          <div className='relative w-full max-h-[700px] h-[75vh] overflow-auto bg-zinc-800 rounded-lg'>
+            <Image
+              src='/cv/CV.png'
+              alt='Curriculum Vitae'
+              width={800}
+              height={1000}
+              className='w-full h-auto object-contain'
+              priority
+            />
+          </div>
+
+          <DialogFooter className='gap-2'>
+            <button
+              onClick={() => setIsDialogOpen(false)}
+              className='px-6 py-2 rounded-lg border border-zinc-700 text-white hover:bg-zinc-800 transition-colors'
+            >
+              Cancel
+            </button>
+            <button
+              onClick={handleDownloadPNG}
+              className='px-6 py-2 rounded-lg bg-white text-black hover:bg-white/70 transition-colors'
+            >
+              Download PNG
+            </button>
+            <button
+              onClick={handleDownloadPDF}
+              className='px-6 py-2 rounded-lg bg-white text-black hover:bg-white/70 transition-colors'
+            >
+              Download PDF
+            </button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 }

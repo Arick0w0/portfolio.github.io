@@ -85,9 +85,9 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className='mb-6'
+            className='mb-4 md:mb-6'
           >
-            <h1 className='text-4xl md:text-7xl font-bold bg-gradient-to-br from-slate-300 to-slate-500 bg-clip-text text-transparent leading-tight'>
+            <h1 className='text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-br from-slate-300 to-slate-500 bg-clip-text text-transparent leading-tight'>
               Hi I&apos;m <br />
               <EncryptedText
                 text='Nanthavy Phommathep'
@@ -99,7 +99,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className='text-base md:text-lg text-gray-400 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed'
+            className='text-sm sm:text-base md:text-lg text-gray-400 mb-6 md:mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed px-4 sm:px-0'
           >
             Mobile Application Developer specializing in Flutter & Dart. I build
             high-performance, scalable, and beautiful mobile applications with
@@ -110,15 +110,15 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className='flex flex-wrap gap-4 justify-center lg:justify-start'
+            className='flex flex-wrap gap-3 sm:gap-4 justify-center lg:justify-start px-4 sm:px-0'
           >
             <button
               onClick={() => setIsDialogOpen(true)}
-              className='px-8 py-3 rounded-full bg-white text-black font-medium hover:bg-gray-200 transition-colors'
+              className='px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base rounded-full bg-white text-black font-medium hover:bg-gray-200 transition-colors w-full sm:w-auto'
             >
               Download CV
             </button>
-            <button className='px-8 py-3 rounded-full border border-zinc-700 text-white font-medium hover:bg-zinc-900 transition-colors'>
+            <button className='px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base rounded-full border border-zinc-700 text-white font-medium hover:bg-zinc-900 transition-colors w-full sm:w-auto'>
               Explore My Projects
             </button>
           </motion.div>
@@ -186,7 +186,7 @@ export default function Hero() {
             </DialogTitle>
           </DialogHeader>
 
-          <div className='relative w-full max-h-[700px] h-[75vh] overflow-auto bg-zinc-800 rounded-lg'>
+          <div className='relative w-full h-[60vh] max-h-[700px] lg:h-[75vh] overflow-auto bg-zinc-800 rounded-lg'>
             <Image
               src='/cv/CV.png'
               alt='Curriculum Vitae'

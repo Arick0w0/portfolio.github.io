@@ -1,89 +1,90 @@
 "use client";
-
+import TechStack from "@/components/tech-stack"
 import { motion } from "framer-motion";
-import {
-  Code2,
-  Smartphone,
-  Database,
-  Layout,
-  GitBranch,
-  Terminal,
-  Figma,
-  Layers,
-  Cpu,
-  Globe,
-  Server,
-  Wifi,
-} from "lucide-react";
+// import {
+//   Code2,
+//   Smartphone,
+//   Database,
+//   Layout,
+//   GitBranch,
+//   Terminal,
+//   Figma,
+//   Layers,
+//   Cpu,
+//   Globe,
+//   Server,
+//   Wifi,
+// } from "lucide-react";
 
-const skills = [
-  {
-    name: "Flutter",
-    category: "Mobile Framework",
-    icon: Smartphone,
-  },
-  {
-    name: "Dart",
-    category: "Language",
-    icon: Code2,
-  },
-  {
-    name: "Clean Architecture",
-    category: "Design Pattern",
-    icon: Layers,
-  },
-  {
-    name: "BLoC / GetX",
-    category: "State Management",
-    icon: Cpu,
-  },
-  {
-    name: "Firebase",
-    category: "Backend as a Service",
-    icon: Database,
-  },
-  {
-    name: "REST API",
-    category: "Data Integration",
-    icon: Globe,
-  },
-  {
-    name: "WebSocket",
-    category: "Real-time",
-    icon: Wifi,
-  },
-  {
-    name: "Git & GitHub",
-    category: "Version Control",
-    icon: GitBranch,
-  },
-  {
-    name: "CI/CD",
-    category: "DevOps",
-    icon: Server,
-  },
-  {
-    name: "Figma",
-    category: "Design Tool",
-    icon: Figma,
-  },
-  {
-    name: "VS Code",
-    category: "Code Editor",
-    icon: Terminal,
-  },
-  {
-    name: "UI/UX Design",
-    category: "Design",
-    icon: Layout,
-  },
-];
+// const skills = [
+//   {
+//     name: "Flutter",
+//     category: "Mobile Framework",
+//     icon: Smartphone,
+//   },
+//   {
+//     name: "Dart",
+//     category: "Language",
+//     icon: Code2,
+//   },
+//   {
+//     name: "Clean Architecture",
+//     category: "Design Pattern",
+//     icon: Layers,
+//   },
+//   {
+//     name: "BLoC / GetX",
+//     category: "State Management",
+//     icon: Cpu,
+//   },
+//   {
+//     name: "Firebase",
+//     category: "Backend as a Service",
+//     icon: Database,
+//   },
+//   {
+//     name: "REST API",
+//     category: "Data Integration",
+//     icon: Globe,
+//   },
+//   {
+//     name: "WebSocket",
+//     category: "Real-time",
+//     icon: Wifi,
+//   },
+//   {
+//     name: "Git & GitHub",
+//     category: "Version Control",
+//     icon: GitBranch,
+//   },
+//   {
+//     name: "CI/CD",
+//     category: "DevOps",
+//     icon: Server,
+//   },
+//   {
+//     name: "Figma",
+//     category: "Design Tool",
+//     icon: Figma,
+//   },
+//   {
+//     name: "VS Code",
+//     category: "Code Editor",
+//     icon: Terminal,
+//   },
+//   {
+//     name: "UI/UX Design",
+//     category: "Design",
+//     icon: Layout,
+//   },
+// ];
 
 export default function Skills() {
   return (
     <section id='skills' className='py-20 bg-black relative overflow-hidden'>
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10'>
-        <div className='mb-16'>
+        <TechStack/>
+        {/* <div className='mb-16'>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -100,9 +101,9 @@ export default function Skills() {
           >
             My Professional Skills
           </motion.p>
-        </div>
+        </div> */}
 
-        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
+        {/* <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
           {skills.map((skill, index) => (
             <motion.div
               key={index}
@@ -123,7 +124,7 @@ export default function Skills() {
               </div>
             </motion.div>
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );

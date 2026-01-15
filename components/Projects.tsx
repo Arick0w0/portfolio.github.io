@@ -10,110 +10,65 @@ const projects = [
   {
     title: "Taxi Driver App",
     description:
-      "Real-time navigation and trip management platform for professional taxi drivers",
-    highlights: [
-      "Built live GPS tracking system handling 100+ concurrent driver sessions",
-      "Implemented WebSocket-based chat/call reducing customer wait time by 35%",
-    ],
-    technologies: ["Flutter", "GetX", "Firebase", "Google Maps", "WebSocket"],
+      "Real-time navigation system with trip tracking for taxi drivers, integrated with backend services.",
+    technologies: ["Flutter", "Dart", "BLoC", "Firebase", "Google Maps"],
     image: "taxiDriver.png",
-    className: "md:col-span-2",
   },
   {
     title: "Food Delivery App",
     description:
-      "End-to-end food delivery platform with real-time order tracking",
-    highlights: [
-      "Developed order management system processing 500+ daily orders",
-      "Built real-time delivery tracking with live location updates",
-    ],
-    technologies: ["Flutter", "GetX", "Firebase", "WebSocket"],
+      "Complete food delivery solution with order management, real-time delivery tracking, and customer notifications.",
+    technologies: ["Flutter", "GetX", "REST API", "Firebase", "WebSocket"],
     image: "foodCustomer.png",
-    className: "md:col-span-1",
   },
   {
     title: "Smart ODS App",
     description:
-      "Government service platform for import quota requests and tracking",
-    highlights: [
-      "Architected dynamic form system handling 50+ different form types",
-      "Built real-time application status tracking with step-by-step progress",
-    ],
+      "Multi-service app allowing users to submit online forms to request import quotas and track application status in real-time.",
     technologies: ["Flutter", "Riverpod", "Dynamic Forms", "REST API"],
     image: "smartOds.png",
-    className: "md:col-span-1",
   },
   {
     title: "DOTP App",
     description:
-      "Enterprise quota management with complex dynamic forms and workflow tracking",
-    highlights: [
-      "Developed dynamic form builder supporting conditional field validation",
-      "Implemented multi-step approval workflow with real-time status updates",
-    ],
+      "App for importers to request quotas with dynamic forms and monitor application steps in real-time.",
     technologies: ["Flutter", "BLoC", "Dynamic Forms", "Firebase"],
     image: "dtop.png",
-    className: "md:col-span-2",
   },
   {
     title: "EV Charging App",
     description:
-      "Smart EV charging station locator with real-time availability monitoring",
-    highlights: [
-      "Built real-time charging station monitoring using WebSocket connections",
-      "Implemented interactive map showing live availability for 200+ stations",
-    ],
-    technologies: ["Flutter", "Riverpod", "WebSocket", "Google Maps"],
+      "Displays real-time status of EV charging stations with live availability updates.",
+    technologies: ["Flutter", "REST API", "WebSocket", "Google Maps"],
     image: "ev.png",
-    className: "md:col-span-2",
+  },
+  {
+    title: "Express & Logistics App",
+    description:
+      "Parcel delivery and bus trip management with real-time tracking, passenger notifications, and ticket scanning.",
+    technologies: ["Flutter", "GetX", "WebSocket", "Firebase", "QR Scanner"],
+    image: "expressDiver.png",
   },
   {
     title: "Taxi Customer App",
     description:
-      "User-friendly ride booking platform with real-time tracking and secure payments",
-    highlights: [
-      "Built seamless ride booking flow reducing booking time to under 30 seconds",
-      "Integrated multiple payment gateways supporting cards and e-wallets",
-    ],
+      "Client application for booking rides, real-time driver tracking, and secure in-app payments.",
     technologies: ["Flutter", "Google Maps", "Firebase", "Payment Gateway"],
     image: "taxiCsteom.png",
-    className: "md:col-span-1",
   },
   {
     title: "Food Driver App",
     description:
-      "Delivery partner application with route optimization and earnings tracking",
-    highlights: [
-      "Built intelligent route optimization reducing delivery time by 30%",
-      "Developed earnings dashboard with real-time commission calculations",
-    ],
-    technologies: ["Flutter", "GetX", "Google Maps", "Real-time DB"],
+      "Dedicated app for delivery partners to manage orders, navigate to customers, and track earnings.",
+    technologies: ["Flutter", "Google Maps", "Real-time DB", "GetX"],
     image: "foodDiver.png",
-    className: "md:col-span-1",
   },
   {
-    title: "Express Driver App",
+    title: "Logistics Customer App",
     description:
-      "Logistics driver platform for parcel delivery and bus trip management",
-    highlights: [
-      "Developed parcel tracking system handling 1000+ daily deliveries",
-      "Built QR code scanner for instant ticket validation and check-in",
-    ],
-    technologies: ["Flutter", "GetX", "WebSocket", "Firebase", "QR Scanner"],
-    image: "expressDiver.png",
-    className: "md:col-span-1",
-  },
-  {
-    title: "Express Customer App",
-    description:
-      "User-friendly logistics app for tracking parcels and booking bus tickets",
-    highlights: [
-      "Built real-time parcel tracking with delivery status notifications",
-      "Integrated payment gateway for seamless ticket booking and payments",
-    ],
+      "User-friendly app for tracking parcels, booking bus tickets, and managing delivery history.",
     technologies: ["Flutter", "QR Scanner", "Payment Gateway", "FCM"],
     image: "customerExpress.png",
-    className: "md:col-span-1",
   },
 ];
 
@@ -145,16 +100,13 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className={cn(project.className)}
             >
-              <BackgroundGradient className='h-full rounded-[22px] bg-zinc-900 p-6 flex flex-col'>
+              <BackgroundGradient className='lg:h-[500px] rounded-[22px] bg-zinc-900  p-6 flex flex-col'>
                 {/* Image Container */}
-                <div className='relative h-64 md:h-80 w-full overflow-hidden rounded-2xl mb-6'>
+                <div className='relative h-64 w-full overflow-hidden rounded-2xl mb-6'>
                   <div className='absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10' />
                   <Image
-                    src={`${
-                      process.env.NODE_ENV === "production" ? "/portfolio" : ""
-                    }/images/${project.image}`}
+                    src={`/images/${project.image}`}
                     alt={project.title}
                     fill
                     className='object-cover'
@@ -172,25 +124,11 @@ export default function Projects() {
                     </div>
                   </div>
 
-                  <p className='text-neutral-400 text-sm mb-4 font-medium'>
+                  <p className='text-neutral-300 text-sm mb-4 flex-1'>
                     {project.description}
                   </p>
 
-                  {/* Highlights */}
-                  <div className='mb-4 space-y-2'>
-                    {project.highlights.map((highlight, i) => (
-                      <div key={i} className='flex items-start gap-2'>
-                        <span className='text-purple-400 mt-1.5 flex-shrink-0'>
-                          •
-                        </span>
-                        <p className='text-neutral-300 text-xs leading-relaxed'>
-                          {highlight}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className='flex flex-wrap gap-2 mt-auto'>
+                  <div className='flex flex-wrap gap-2'>
                     {project.technologies.map((tech, i) => (
                       <span
                         key={i}

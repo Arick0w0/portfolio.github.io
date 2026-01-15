@@ -24,17 +24,30 @@ import { useControls } from "leva";
 extend({ MeshLineGeometry, MeshLineMaterial });
 
 // Preload models and textures
-const basePath = process.env.NODE_ENV === "production" ? "/portfolio" : "";
-useGLTF.preload(`${basePath}/lailaolab-tag.glb`, false, false);
+useGLTF.preload('/lailaolab-tag.glb', false, false);
 
-useTexture.preload(`${basePath}/lailaolab-clamp.png`);
+useTexture.preload('/lailaolab-clamp.png');
+
+function CameraController() {
+  const { camera, size } = useThree();
+  
+  useEffect(() => {
+    const isLargeScreen = size.width >= 1024;
+    const zPosition = isLargeScreen ? 25 : 20;
+    camera.position.set(0, 0, zPosition);
+    camera.updateProjectionMatrix();
+  }, [camera, size.width]);
+  
+  return null;
+}
 
 export default function Tag3d() {
   return (
     <Canvas
-      camera={{ position: [0, 0, 12], fov: 25 }}
-      style={{ background: "transparent", height: "100%", width: "100%" }}
+      camera={{ position: [0, 0, 20], fov: 25 }} style={{ width: '100%', height: '100%' }
+      }
     >
+      <CameraController />
       <ambientLight intensity={Math.PI} />
       <Physics interpolate gravity={[0, -40, 0]} timeStep={1 / 60}>
         <Band />
@@ -95,17 +108,28 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
   };
 
   // Load models and textures
-  const basePath = process.env.NODE_ENV === "production" ? "/portfolio" : "";
-  const { nodes, materials } = useGLTF(`${basePath}/lailaolab-tag.glb`);
+  const { nodes, materials } = useGLTF('/lailaolab-tag.glb');
   for (const node of Object.values(nodes)) {
     if (node instanceof THREE.Mesh) {
       console.log(node.geometry, node.material);
     }
   }
 
-  const texture = useTexture(`${basePath}/lailaolab-clamp.png`);
+  const texture = useTexture('/lailaolab-clamp.png');
 
-  const { width, height } = useThree((state) => state.size);
+  const { width, height, size } = useThree((state) => ({ 
+    width: state.size.width, 
+    height: state.size.height,
+    size: state.size 
+  }));
+  
+  const isLargeScreen = size.width >= 1024;
+  
+  const groupPosition = isLargeScreen ? [3, 6, 0] : [0, 5, 0];
+  const j1Position = isLargeScreen ? [3.5, -6, 0] : [0.5, -6, 0];
+  const j2Position = isLargeScreen ? [4, -6, 0] : [1, -6, 0];
+  const j3Position = isLargeScreen ? [4.5, -6, 0] : [1.5, -6, 0];
+  
   const [curve] = useState(
     () =>
       new THREE.CatmullRomCurve3([
@@ -192,15 +216,15 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
 
   return (
     <>
-      <group position={[0, 4, 0]}>
+      <group position={groupPosition as [number, number, number]}>
         <RigidBody ref={fixed} {...segmentProps} type='fixed' />
-        <RigidBody position={[0.5, 0, 0]} ref={j1} {...segmentProps}>
+        <RigidBody position={j1Position as [number, number, number]} ref={j1} {...segmentProps}>
           <BallCollider args={[0.1]} />
         </RigidBody>
-        <RigidBody position={[1, 0, 0]} ref={j2} {...segmentProps}>
+        <RigidBody position={j2Position as [number, number, number]} ref={j2} {...segmentProps}>
           <BallCollider args={[0.1]} />
         </RigidBody>
-        <RigidBody position={[1.5, 0, 0]} ref={j3} {...segmentProps}>
+        <RigidBody position={j3Position as [number, number, number]} ref={j3} {...segmentProps}>
           <BallCollider args={[0.1]} />
         </RigidBody>
         <RigidBody

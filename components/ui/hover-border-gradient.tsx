@@ -18,12 +18,13 @@ export const HoverBorderGradient = ({
     className?: string;
     duration?: number;
     clockwise?: boolean;
+    width?: string;
   } & Record<string, any>
 >) => {
   return (
     <Tag
       className={cn(
-        "relative flex rounded-full border content-center bg-black/20 hover:bg-black/10 transition duration-500 items-center flex-col flex-nowrap gap-10 h-min justify-center overflow-visible p-px decoration-clone w-fit",
+        `relative flex rounded-full border content-center bg-black/20 hover:bg-black/10 transition duration-500 items-center flex-col flex-nowrap gap-10 h-min justify-center overflow-visible p-px decoration-clone ${props.width ? `${props.width}` : "w-fit"}`,
         containerClassName
       )}
       {...props}

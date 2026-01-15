@@ -125,25 +125,21 @@ export default function About() {
             <div className='absolute inset-0 flex justify-left items-center w-full h-full'>
               <Tag3d />
             </div>
-            <div className='absolute bottom-4 left-0 right-0 text-center pointer-events-none'>
-              <p className='text-xs text-gray-500 uppercase tracking-widest'>
-                Interactive 3D Card
-              </p>
-            </div>
+           
           </div>
           </div>
           {/* 1. Main Bio - Large Card */}
          
 
           {/* 5. Quote - Full Width Bottom */}
-          <div className='order-3 md:col-span-6 bg-gradient-to-r from-indigo-900/50 to-purple-900/50 rounded-3xl p-8 border border-indigo-500/20 flex items-center justify-center text-center'>
+          {/* <div className='order-3 md:col-span-6 bg-gradient-to-r from-indigo-900/50 to-purple-900/50 rounded-3xl p-8 border border-indigo-500/20 flex items-center justify-center text-center'>
             <div>
               <p className='text-xl md:text-2xl font-medium text-white italic mb-2'>
                 &quot;Working with heart, creating with mind.&quot;
               </p>
               <p className='text-indigo-300 text-sm'>- My Philosophy</p>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

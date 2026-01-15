@@ -13,7 +13,6 @@ const projects = [
       "Real-time navigation system with trip tracking for taxi drivers, integrated with backend services.",
     technologies: ["Flutter", "Dart", "BLoC", "Firebase", "Google Maps"],
     image: "taxiDriver.png",
-    className: "md:col-span-2",
   },
   {
     title: "Food Delivery App",
@@ -21,7 +20,6 @@ const projects = [
       "Complete food delivery solution with order management, real-time delivery tracking, and customer notifications.",
     technologies: ["Flutter", "GetX", "REST API", "Firebase", "WebSocket"],
     image: "foodCustomer.png",
-    className: "md:col-span-1",
   },
   {
     title: "Smart ODS App",
@@ -29,7 +27,6 @@ const projects = [
       "Multi-service app allowing users to submit online forms to request import quotas and track application status in real-time.",
     technologies: ["Flutter", "Riverpod", "Dynamic Forms", "REST API"],
     image: "smartOds.png",
-    className: "md:col-span-1",
   },
   {
     title: "DOTP App",
@@ -37,7 +34,6 @@ const projects = [
       "App for importers to request quotas with dynamic forms and monitor application steps in real-time.",
     technologies: ["Flutter", "BLoC", "Dynamic Forms", "Firebase"],
     image: "dtop.png",
-    className: "md:col-span-2",
   },
   {
     title: "EV Charging App",
@@ -45,7 +41,6 @@ const projects = [
       "Displays real-time status of EV charging stations with live availability updates.",
     technologies: ["Flutter", "REST API", "WebSocket", "Google Maps"],
     image: "ev.png",
-    className: "md:col-span-2",
   },
   {
     title: "Express & Logistics App",
@@ -53,7 +48,6 @@ const projects = [
       "Parcel delivery and bus trip management with real-time tracking, passenger notifications, and ticket scanning.",
     technologies: ["Flutter", "GetX", "WebSocket", "Firebase", "QR Scanner"],
     image: "expressDiver.png",
-    className: "md:col-span-1",
   },
   {
     title: "Taxi Customer App",
@@ -61,7 +55,6 @@ const projects = [
       "Client application for booking rides, real-time driver tracking, and secure in-app payments.",
     technologies: ["Flutter", "Google Maps", "Firebase", "Payment Gateway"],
     image: "taxiCsteom.png",
-    className: "md:col-span-1",
   },
   {
     title: "Food Driver App",
@@ -69,7 +62,6 @@ const projects = [
       "Dedicated app for delivery partners to manage orders, navigate to customers, and track earnings.",
     technologies: ["Flutter", "Google Maps", "Real-time DB", "GetX"],
     image: "foodDiver.png",
-    className: "md:col-span-1",
   },
   {
     title: "Logistics Customer App",
@@ -77,7 +69,6 @@ const projects = [
       "User-friendly app for tracking parcels, booking bus tickets, and managing delivery history.",
     technologies: ["Flutter", "QR Scanner", "Payment Gateway", "FCM"],
     image: "customerExpress.png",
-    className: "md:col-span-1",
   },
 ];
 
@@ -109,11 +100,10 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className={cn(project.className)}
             >
-              <BackgroundGradient className='h-full rounded-[22px] bg-zinc-900 p-6 flex flex-col'>
+              <BackgroundGradient className='lg:h-[500px] rounded-[22px] bg-zinc-900  p-6 flex flex-col'>
                 {/* Image Container */}
-                <div className='relative h-64 md:h-80 w-full overflow-hidden rounded-2xl mb-6'>
+                <div className='relative h-64 w-full overflow-hidden rounded-2xl mb-6'>
                   <div className='absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10' />
                   <Image
                     src={`/images/${project.image}`}

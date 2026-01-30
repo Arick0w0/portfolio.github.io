@@ -32,7 +32,7 @@ export const EvervaultCard = ({
     if (!rectRef.current) {
       rectRef.current = currentTarget.getBoundingClientRect();
     }
-    let { left, top } = rectRef.current;
+    let { left, top } = rectRef.current as DOMRect;
     
     mouseX.set(clientX - left);
     mouseY.set(clientY - top);
